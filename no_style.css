@@ -1,71 +1,93 @@
 /* Base Styles */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f9e3e3;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden; /* prevent scrolling when No button moves */
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f9e3e3;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevent scrolling when No button moves */
+  position: relative;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-    max-width: 90%;
+  text-align: center;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 h1 {
-    font-size: 2em;
-    color: #d32f2f;
-    margin: 0;
+  color: #d32f2f;
+  font-size: 2.5em;
+  margin: 0;
 }
 
 p {
-    font-size: 1.2em;
-    margin: 0;
+  font-size: 1.2em;
+  margin: 0;
 }
 
 .buttons {
-    position: relative; /* required for absolute No button */
-    width: 100%;
-    height: 60px; /* initial space for buttons */
+  margin-top: 30px;
+  position: relative; /* necessary for absolute No button */
+  width: 100%;
+  height: 60px; /* initial space for buttons */
+  display: flex;
+  justify-content: center;
 }
 
-/* Buttons */
 button {
-    font-size: 1.3em;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  font-size: 1.3em;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Yes button stays in place */
 .yes-button {
-    background-color: #4caf50;
-    color: white;
-    position: relative; /* stays in place */
+  background-color: #4caf50;
+  color: white;
+  position: relative;
+  z-index: 1;
 }
 
+/* No button moves */
 .no-button {
-    background-color: #f44336;
-    color: white;
-    position: absolute; /* moves around the screen */
-    top: 0;
-    left: 50%; /* start centered */
-    transform: translateX(-50%);
+  background-color: #f44336;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
-/* Mobile adjustments */
+/* Mobile Adjustments */
 @media (max-width: 480px) {
-    h1 { font-size: 1.6em; }
-    p { font-size: 1em; }
-    button { font-size: 1.1em; padding: 8px 14px; }
+  h1 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1.1em;
+    padding: 8px 16px;
+  }
+
+  .buttons {
+    height: 50px;
+  }
 }
