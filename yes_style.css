@@ -1,8 +1,8 @@
-/* Base Styles */
 body {
     display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center;     /* center vertically */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     margin: 0;
     background-color: #f9e3e3;
@@ -11,51 +11,32 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column; /* stack items vertically */
-    align-items: center;    /* center items horizontally */
-    justify-content: center; /* center items vertically inside container */
-    gap: 20px;              /* space between header, image, button */
     max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-/* Header */
-.header_text {
-    font-size: 2.2em;
-    color: #d32f2f;
-    margin: 0;
-}
+.header_text { font-size: 2.2em; color: #d32f2f; margin: 0; }
 
-/* Image */
 .gif_container img {
     width: 80%;
     max-width: 250px;
     height: auto;
     border-radius: 12px;
-    transition: transform 0.3s ease;
 }
 
-.gif_container img:hover {
-    transform: scale(1.05);
-}
-
-/* Letter button */
 .letter-btn {
     font-size: 1.3em;
-    padding: 12px 24px;
+    padding: 12px 22px;
     border: none;
     border-radius: 12px;
     background-color: #e91e63;
     color: white;
     cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
-.letter-btn:hover {
-    transform: scale(1.08);
-}
-
-/* Letter box */
 .letter {
     margin-top: 15px;
     padding: 25px;
@@ -63,41 +44,18 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     max-width: 500px;
-    display: none;      /* hidden initially */
+    display: none;
     opacity: 0;
     transform: scale(0.9);
     transition: all 0.6s ease;
 }
 
-.letter.show {
-    display: block;     /* shows on button click */
-    opacity: 1;
-    transform: scale(1);
-}
+.letter.show { display: block; opacity: 1; transform: scale(1); }
+.letter p { font-size: 1.1em; line-height: 1.6; color: #444; }
 
-.letter p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #444;
-}
-
-/* Mobile adjustments */
 @media (max-width: 480px) {
-    .header_text {
-        font-size: 1.7em;
-    }
-
-    .gif_container img {
-        max-width: 180px;
-        width: 70%;
-    }
-
-    .letter-btn {
-        font-size: 1.1em;
-        padding: 10px 20px;
-    }
-
-    .letter {
-        font-size: 0.95em;
-    }
+    .header_text { font-size: 1.7em; }
+    .gif_container img { max-width: 180px; width: 70%; }
+    .letter-btn { font-size: 1.1em; padding: 10px 18px; }
+    .letter { font-size: 0.95em; }
 }
